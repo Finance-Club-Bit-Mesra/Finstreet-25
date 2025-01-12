@@ -22,6 +22,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
+            cursor: 'hidden';
             /* Prevent horizontal scrolling */
         }
 
@@ -257,6 +258,28 @@
                 -ms-overflow-style: none; /* IE and Edge */
                 scrollbar-width: none; /* Firefox */
             }
+
+            .trail {
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                background: rgba(2, 246, 214, 0.8);
+                border-radius: 50%;
+                pointer-events: none; /* Prevent interaction */
+                animation: fade 0.5s ease-out forwards;
+            }
+
+            @keyframes fade {
+                from {
+                  opacity: 1;
+                }
+                to {
+                  opacity: 0;
+                  transform: scale(0.5);
+                }
+            }
+
+
 
                      
     </style>
@@ -897,6 +920,20 @@
         });
     </script>
 
+
+
+    <script>
+        document.addEventListener('mousemove', (e) => {
+          const trail = document.createElement('div');
+          trail.className = 'trail';
+          trail.style.left = `${e.pageX}px`;
+          trail.style.top = `${e.pageY}px`;
+          document.body.appendChild(trail);
+          setTimeout(() => {
+            trail.remove();
+          }, 500);
+        });
+    </script>
 
 
     <script>
