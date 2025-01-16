@@ -22,7 +22,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
-            cursor: 'hidden';
+          
             /* Prevent horizontal scrolling */
         }
 
@@ -259,25 +259,7 @@
                 scrollbar-width: none; /* Firefox */
             }
 
-            .trail {
-                position: absolute;
-                width: 10px;
-                height: 10px;
-                background: rgba(2, 246, 214, 0.8);
-                border-radius: 50%;
-                pointer-events: none; /* Prevent interaction */
-                animation: fade 0.5s ease-out forwards;
-            }
 
-            @keyframes fade {
-                from {
-                  opacity: 1;
-                }
-                to {
-                  opacity: 0;
-                  transform: scale(0.5);
-                }
-            }
 
 
 
@@ -626,8 +608,6 @@
           </div>
         </div>
 
-       <!--
-
         <div id="sponsor" class="max-w-6xl mx-auto px-4 py-16">
             <div class="flex flex-col justify-center">
                 <div class="text-center mb-12">
@@ -691,7 +671,7 @@
                                     <img 
                                         :src="card.image" 
                                         alt="" 
-                                        class="w-40 h-40 object-fit rounded-lg"
+                                        class="w-70 h-40 object-fit rounded-lg"
                                     />
                                 </div>
                             </div>
@@ -703,9 +683,6 @@
 
         </div>
 
-
-
-    -->
     </div>
 
 
@@ -843,39 +820,29 @@
                     cards: [
                     {
                         id: 1,
-                        image: `s2.png`,
+                        image: `s1.png`,
                         title: 'Sponsor 1'
                     },
                     {
                         id: 2,
-                        image: `s1.png`,
+                        image: `s2.png`,
                         title: 'Sponsor 2',
                     },
                     {
                         id: 3,
-                        image: `s2.png`,
+                        image: `s3.png`,
                         title: 'Sponsor 3',
                     },
                     {
                         id: 4,
-                        image: `s1.png`,
+                        image: `s4.png`,
                         title: 'Sponsor 4',
                     },
                     {
                         id: 5,
-                        image: `s2.png`,
+                        image: `s5.png`,
                         title: 'Sponsor 5',
                     },
-                    {
-                        id: 6,
-                        image: `s1.png`,
-                        title: 'Sponsor 6',
-                    },
-                    {
-                        id: 7,
-                        image: `s2.png`,
-                        title: 'Sponsor 7',
-                    }
                     ],
                 };
                 }
@@ -920,21 +887,6 @@
             // Toggle hamburger and close icon visibility
             hamburgerIcon.classList.toggle('hidden');
             closeIcon.classList.toggle('hidden');
-        });
-    </script>
-
-
-
-    <script>
-        document.addEventListener('mousemove', (e) => {
-          const trail = document.createElement('div');
-          trail.className = 'trail';
-          trail.style.left = `${e.pageX}px`;
-          trail.style.top = `${e.pageY}px`;
-          document.body.appendChild(trail);
-          setTimeout(() => {
-            trail.remove();
-          }, 500);
         });
     </script>
 
